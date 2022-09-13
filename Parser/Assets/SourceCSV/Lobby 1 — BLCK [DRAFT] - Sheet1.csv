@@ -1,0 +1,19 @@
+Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",DREAMER
+,Player Choice/Path,LIGHTHOUSE
+,Notes,BLACKGUARD
+,*bold* _italic_,TROUBADOUR
+SYSTEM,"[NODE: ""Lobby1.Blackguard2""] ",
+NOTE,Player approaches BLCK when Lobby 1 opens,
+BLACKGUARD,I really can't believe this.,
+DREAMER,Believe what?,
+BLACKGUARD,*You're kidding. Do you not see where we are right now?!*,
+BLACKGUARD,And on top of that we're child mercenaries fighting for who knows what.,
+DREAMER,There must be a good reason.,
+BLACKGUARD,Do you not get the aburdity of this?,
+DREAMER,"I get it, it's unfair but we can get through this.",
+BLACKGUARD,How are we suppose to get through this when we don't even know what we're suppose to do.,
+DREAMER,We were chosen for a reason. You already have what you need to be here.,
+BLACKGUARD,I didn't sign up for this.,
+DREAMER,"None of us did. We're all here against our will, but we can get back at the person or thing that did this to us together.",
+BLACKGUARD,"Yeah, whatever.",
+SYSTEM,[ENDNODE],

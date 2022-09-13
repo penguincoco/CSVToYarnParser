@@ -32,6 +32,7 @@ public class ParserObject : MonoBehaviour
 
         systemActionsDict.Add("[PAUSE]", "<<pause>>");
         systemActionsDict.Add("[NODE:", "title");
+        systemActionsDict.Add("[SHAKE]", "<<shake>>");
         //systemActionsDict.Add("NOTE","<<function call>>");
 
         UIActionsDict.Add('*', "<<bold>>");

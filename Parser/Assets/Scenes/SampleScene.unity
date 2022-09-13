@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411fb568a98a8489b8a79ca77b2ca663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCSV: {fileID: 4900000, guid: eb71d987f12df48b58e09884808bc080, type: 3}
+  dialogueCSV: {fileID: 4900000, guid: 35ee860b985c94c57bd47e2d5a26344c, type: 3}
   yarnOutputFile: {fileID: 4900000, guid: eb0f9ddceba3b42bf874588bcf4f7d31, type: 3}
   dialogue: []
   rowCount: 0

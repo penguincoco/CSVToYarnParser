@@ -1,0 +1,46 @@
+Name,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+,Player Choice/Path
+,Notes
+,*bold* _italic_
+NOTE,Player meets with TBDR after first battle.
+SYSTEM,"[NODE: ""Lobby1Person.TBDR1""]"
+NOTE,Main Troubadour node.
+TROUBADOUR,Isn't this exciting!
+DREAMER,Exciting?
+TROUBADOUR,It's like we are superheros tasked with saving humanity! 
+DREAMER,I'm not sure I see it that way ...aren't you scared?
+TROUBADOUR,"Scared? Sure, but would we be here if we weren't capable? "
+TROUBADOUR,I think it's all meant to be
+DREAMER,But if we fail...the Universe will unravel. That's a pretty hefty task for a few teenagers.
+TROUBADOUR,Don't be such a downer! If we succeed we will be remembered forever! So don’t worry so much.
+DREAMER,I can't help but worry. What if we can't complete what we are meant to? We were barely able to destroy the beacon 
+TROUBADOUR,It will get easier with time.
+TROUBADOUR,Soon we will be fighting evil like real superheroes!
+NARRATION,&What's so exciting about being a superhero? It seems like a lot of responsibility.&
+DREAMER,Aren't you curious as to why we are here?
+TROUBADOUR,"Duh, we're special. I don’t see why it's such a big deal."
+TROUBADOUR,"We have an opportunity to do something great, we should embrace it!"
+DREAMER,...
+TROUBADOUR,I won't lie-- I wish I could do more. Maybe if I apply myself I can be granted with more than just healing
+TROUBADOUR,I don't want to just sit back and watch everyone else fight
+TROUBADOUR,I want to be part of the action! I want more than what's been given...it feels a little unfair. That all-knowing bird should recognize my talents! 
+DREAMER,Everyone has a role to play and healing is a big one.
+TROUBADOUR,"Sure, but look at Blackguard. He doesn't even want to be here and yet he gets to be part of so much more! "
+DREAMER,You think he's undeserving? Didn't you say it's all meant to be?
+TROUBADOUR,...
+DREAMER,Are you sure you're alright? We did just fight a bunch of monsters.
+TROUBADOUR,"I know wasn't it cool! One minute we were like ""ah!"" and then the next we were absolutely owning them! "
+NARRATION,He seems a little aloof. I guess Lighthouse was right about him being positive.
+TROUBADOUR,It wouldn't be an adventure if it wasn't scary at times! We all have our doubts but what's the harm in trying to think positively? 
+TROUBADOUR,Being all doom and gloom _like someone we know_ won't get us anywhere. So chin up! 
+TROUBADOUR,"It's better we just trust the bird than get all exist-, exists-...hmmm..."
+NOTE,TBDR seems to struggle a bit with speaking. DRMR decides to help him a bit by finishing his sentence.
+DREAMER,Existstential? 
+TROUBADOUR,Yes! Exactly. Existential. 
+DREAMER,I guess you're right. We're here now. Not much we can do about our situation but move forward. Can't cry over spilled milk...
+TROUBADOUR,Hmm? WHAT? You can totally cry over spilled milk! _I_ would bawl if I spilled my milk...
+DREAMER,...that's not exactly what I meant.
+NOTE,TBDR distractedly walks off...mesmorized by the surrounding area cutting off the rest of your conversation.
+NOTE,Troubadour starts walking away.
+DREAMER,Where are you—and off he goes.
+SYSTEM,[ENDNODE]
