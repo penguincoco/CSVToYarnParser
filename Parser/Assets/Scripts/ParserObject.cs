@@ -59,7 +59,7 @@ public class ParserObject : MonoBehaviour
         for (int i = 0; i < dialogue.Length; i++) 
         {
             //Debug.Log(dialogue[i]);
-            string[] pieces = dialogue[i].Split(new[] { ',' }, 2);
+            string[] pieces = dialogue[i].Split(new[] { ',' }, 3);
 
             //Debug.Log("Length " + pieces[0].Length.ToString() + " " + pieces[1].Length.ToString());
             
@@ -67,7 +67,7 @@ public class ParserObject : MonoBehaviour
             if (pieces[0].Length == 0)
                 dialogueContainer[i] = new DialogueLine();
             else 
-                dialogueContainer[i] = new DialogueLine(pieces[0], pieces[1]);
+                dialogueContainer[i] = new DialogueLine(pieces[0], pieces [1], pieces[2]);
 
             //Debug.Log(dialogueContainer[i].GetDialogueLine());
             yarnString += dialogueContainer[i].GetDialogueLine();
@@ -118,13 +118,15 @@ public class DialogueLine
 {
     private string charName;
     private string charLine;
+    private string emotion;
 
     private string dialogueLine;
 
     //this constructor should only ever be called if the line found actually had ANY content at all in either the name column, or line column
-    public DialogueLine(string charName, string charLine)
+    public DialogueLine(string charName, string emotion, string charLine)
     {
         this.charName = charName;
+        this.emotion = emotion;
         this.charLine = charLine;
 
         charLine =  charLine.Substring(0, charLine.Length - 2);
@@ -132,11 +134,10 @@ public class DialogueLine
         //delimiter case. the line starts and ends with " because there is ',' or ' " ' somewhere in the line
         if (charLine.Substring(0,1).Equals("\""))
         {
-            Debug.Log("line wiht additional delimiter found");
             charLine = RemoveDelimiters(charLine);
         }
 
-        dialogueLine = Translate(charName, charLine) + '\n';
+        dialogueLine = Translate(charName, emotion, charLine) + '\n';
     }
 
     // public DialogueLine(string command) 
@@ -151,13 +152,12 @@ public class DialogueLine
     }
 
 
-
     private string RemoveDelimiters(string charLine) 
     {
         return charLine.Substring(1, charLine.Length - 2);
     }
 
-    private string Translate(string charName, string charLine) 
+    private string Translate(string charName, string emotion, string charLine) 
     {
         string dialogueLine;
 
@@ -206,7 +206,7 @@ public class DialogueLine
                 Debug.Log("there was a utility char");
             }
 
-            dialogueLine = charName + " : " + charLine;
+            dialogueLine = "<<PlaySFX " + charName.ToLower() + " " + emotion.ToLower() + " >>" + '\n'.ToString() + charName + ": " + charLine;
 
         }
 
