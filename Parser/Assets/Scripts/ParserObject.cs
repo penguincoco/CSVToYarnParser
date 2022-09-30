@@ -179,7 +179,14 @@ public class DialogueLine
             {
                 //have to do this step because the value has the NEW LINE character at the end, lmfao 
                 string value = charLine;
-                string systemValue = ParserObject.systemActionsDict[value];
+                string systemValue;
+
+                if (ParserObject.systemActionsDict.ContainsKey(value)) 
+                    systemValue = ParserObject.systemActionsDict[value];
+                else 
+                    systemValue = "<<function call>>";
+
+                // string systemValue = ParserObject.systemActionsDict[value];
 
                 dialogueLine = systemValue;
             }
@@ -206,7 +213,7 @@ public class DialogueLine
                 Debug.Log("there was a utility char");
             }
 
-            dialogueLine = "<<PlaySFX " + charName.ToLower() + " " + emotion.ToLower() + " >>" + '\n'.ToString() + charName + ": " + charLine;
+            dialogueLine = "<<initialize_line " + charName.ToLower() + " " + emotion.ToLower() + " >>" + '\n'.ToString() + charName + ": " + charLine;
 
         }
 
