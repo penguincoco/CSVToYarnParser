@@ -1,5 +1,6 @@
 # Introduction
-This Parser is a tool for taking in a .csv and outputting a .yarn file. It is most helpful for narrative games that will use a lot of complex Yarn Commands. 
+This Parser is a tool for taking in a .csv and outputting a .yarn file (usable by [YarnSpinner]([url](https://docs.yarnspinner.dev/))). It is most helpful for narrative games that will use a lot of complex Yarn Commands. 
+The project has an example case for the game "Starweave". This parser was developed because every line of character needed a function call before it that would swap out which character portrait is shown based on the speaker and their emotion (plus other things, such as play audio, but that has been removed for simplicity's sake for this repo!). 
 
 # How to Use
 1. Open Tools > Parser (at the top bar). This will open the Parser. 
