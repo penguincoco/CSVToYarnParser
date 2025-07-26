@@ -1,9 +1,0 @@
-TROUBADOUR,That's illegal! 
-SYSTEM,[PAUSE]
-BLACKGUARD,Only if u get caught 
-LIGHTHOUSE,&Lighthouse gives Blackguard a slap across the head.&
-TROUBADOUR,How *bold* of you.
-SYSTEM,[NODE: "wow"]
-TROUBADOUR,okay well that was rude.
-SYSTEM,[ENDNODE]
-NOTE,function call

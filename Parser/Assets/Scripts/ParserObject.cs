@@ -4,6 +4,22 @@ using UnityEngine;
 using System.IO;
 using TMPro;
 
+
+/*
+DEPRECATED. DO NOT USE THIS SCRIPT. 
+For the latest version of the parser (that takes in a .csv and outputs a .yarn file directly to your Unity project (ooo aaaa)
+Navigate to Tools > Parser)
+*/ 
+
+
+
+
+
+
+
+
+
+
 public class ParserObject : MonoBehaviour
 {
     public TextAsset dialogueCSV;
@@ -26,7 +42,7 @@ public class ParserObject : MonoBehaviour
 
     //<<shake_cam BlackGuard 3 1>>
 
-    void Awake() 
+    void Awake()
     {
         //dialogueContainer = new DialogueLine[rowCount];
 
@@ -40,7 +56,7 @@ public class ParserObject : MonoBehaviour
 
         //systemActionsDict.Add("[ITALICS]", "<<italicize>>");
 
-        
+
     }
 
     void Start()
@@ -49,31 +65,32 @@ public class ParserObject : MonoBehaviour
         Translate();
     }
 
-    private void Parse() {
+    private void Parse()
+    {
         string text = dialogueCSV.text;
 
         dialogue = text.Split('\n');
 
         dialogueContainer = new DialogueLine[dialogue.Length];
 
-        for (int i = 0; i < dialogue.Length; i++) 
+        for (int i = 0; i < dialogue.Length; i++)
         {
             //Debug.Log(dialogue[i]);
             string[] pieces = dialogue[i].Split(new[] { ',' }, 3);
 
             //Debug.Log("Length " + pieces[0].Length.ToString() + " " + pieces[1].Length.ToString());
-            
+
             //blank line case, call the blank line constructor
             if (pieces[0].Length == 0)
                 dialogueContainer[i] = new DialogueLine();
-            else 
-                dialogueContainer[i] = new DialogueLine(pieces[0], pieces [1], pieces[2]);
+            else
+                dialogueContainer[i] = new DialogueLine(pieces[0], pieces[1], pieces[2]);
 
             //Debug.Log(dialogueContainer[i].GetDialogueLine());
             yarnString += dialogueContainer[i].GetDialogueLine();
 
             UIText.text = yarnString;
-            
+
         }
 
 
@@ -84,7 +101,7 @@ public class ParserObject : MonoBehaviour
 
         //     // speakerContainer.Add(pieces[0]);
         //     // dialogueContainer.Add(pieces[1]);
-            
+
         //     //string newLine = speakerContainer[dialogueCounter] + " : " + dialogueContainer[dialogueCounter];
 
         //     //Debug.Log(newLine);
@@ -109,7 +126,8 @@ public class ParserObject : MonoBehaviour
         // }
     }
 
-    private void Translate() {
+    private void Translate()
+    {
         int dialogueLineCounter = 0;
     }
 }
