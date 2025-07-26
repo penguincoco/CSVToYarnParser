@@ -1,7 +1,6 @@
 # How to Use
 1. Open Tools > Parser (at the top bar). This will open the Parser. 
-
-<img width="1588" height="1204" alt="image" src="https://github.com/user-attachments/assets/0a768e5a-f19c-4af3-8e69-c4346faf2bd1" />
+<img width="1226" height="146" alt="image" src="https://github.com/user-attachments/assets/97b3d7b5-1a91-48cd-a2d1-0513ae11488a" />
 
 2. Select target .csv
 
