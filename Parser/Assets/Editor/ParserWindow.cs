@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public class ParserWindow : EditorWindow
 {
     private string csvFilePath = "";
-    private string outputFolderPath = "Assets";
+    private string outputFolderPath = "";
+    private string statusMessage = "";
 
     //----- EDITOR RELATED -----//
     [MenuItem("Tools/Parser")]
@@ -45,9 +46,19 @@ public class ParserWindow : EditorWindow
                 return;
             }
 
-            //take in the source CSV and output path
-            ConvertToYarn(csvFilePath, outputFolderPath);
+            statusMessage = "Executing...";
+            Repaint(); // Force the editor to update the window
+
+            EditorApplication.delayCall += () =>
+            {
+                ConvertToYarn(csvFilePath, outputFolderPath);
+                statusMessage = "Done!";
+                Repaint();
+            };
         }
+
+        GUILayout.Space(10);
+        GUILayout.Label($"Status: {statusMessage}");
     }
 
 
@@ -60,17 +71,19 @@ public class ParserWindow : EditorWindow
         4. return the line, add it to a List of all the lines
         5. output
    */
+
     void ConvertToYarn(string csvPath, string outputPath)
     {
-        string rawTest = Parse(csvPath);
-        string[] dialogue = rawTest.Split('\n');
+        string rawTest = Parse(csvPath);            //this parses the csv and makes it a really big string :)
+        string[] dialogue = rawTest.Split('\n');    //this splits the string by NEW LINES 
 
         DialogueLine[] dialogueContainer = new DialogueLine[dialogue.Length];
 
-        string yarnString = "";
+        string yarnString = "";                     //initialize the string that will ultimately be what we write to the .yarn file
 
         for (int i = 0; i < dialogue.Length; i++)
         {
+            //TODO: for people using this tool, split the sheet as desired. In my use case (see Beacon1.csv), I had 3 columns. 
             string[] pieces = dialogue[i].Split(new[] { ',' }, 3);
 
             // Handle blank line
@@ -89,6 +102,7 @@ public class ParserWindow : EditorWindow
         string outputName = Path.GetFileNameWithoutExtension(csvPath);
         OutputYarnFile(yarnString, outputPath, outputName);
     }
+
 
     private string Parse(string csvFilePath)
     {
@@ -115,7 +129,7 @@ public class ParserWindow : EditorWindow
         string fullOutputPath = Path.Combine(outputFolderPath, outputFileName);
 
         File.WriteAllText(fullOutputPath, yarnText);
-
+        AssetDatabase.Refresh();
         Debug.Log($"Yarn file written to: {fullOutputPath}");
     }
 }
@@ -135,8 +149,6 @@ public class DialogueLine
         this.charName = charName;
         this.emotion = emotion;
         this.charLine = charLine;
-
-        Debug.Log("Character line is: " + this.charLine);
 
         //delimiter case. the line starts and ends with " because there is ',' or ' " ' somewhere IN the line.
         if (this.charLine[0].ToString().Equals("\""))
@@ -180,9 +192,12 @@ public class DialogueLine
         return newCharLine;
     }
 
+    //TODO: Implement Translate() based on whatever needs for your project
+    //in the case of my example (see Beacon1.csv for input, and Beacon1.yarn for output), we needed a unique function call before 
+    //every speaker's dialogue that would change the character portrait based off of the speaker, and their emotion 
     private string Translate(string charName, string emotion, string charLine)
     {
-        Debug.Log("Attempting to translate this raw data: " + charLine);
+        //---------- REPLACE BODY AND FUNCTION PARAMETERS AS NEEDED ----------//
         string dialogueLine = charLine;
 
         if (charName.Equals("SYSTEM"))
@@ -203,8 +218,6 @@ public class DialogueLine
                 //have to do this step because the value has the NEW LINE character at the end, lmfao 
                 string value = charLine.Substring(1, charLine.Length - 3);
                 string systemValue;
-
-                //Debug.Log("System line is: " + value);
 
                 if (Utilities.availableActions.ContainsKey(value))
                     systemValue = Utilities.availableActions[value];
@@ -232,11 +245,17 @@ public class DialogueLine
         }
         else
         {
+            //this is where we added that function call before every dialogue line. 
+            //see YarnCommands.cs to see syntax example, and read YarnSpinner docs for how to implement YarnCommands: https://docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals/commands 
+            // Below is the example output.
+            //<<initialize_line blackguard determined >>
             dialogueLine = "<<initialize_line " + charName.ToLower() + " " + emotion.ToLower() + " >>" + '\n'.ToString() + charName + ": " + charLine;
         }
 
         return dialogueLine;
+        //---------- END REPLACE ----------//
     }
+
 
     //---------- Helper Functions ----------//
     public string GetDialogueLine()
@@ -257,6 +276,8 @@ public class DialogueLine
 
 public class Utilities
 {
+    //TODO: Implement YarnFunctions here
+    //as you can see, for my example, we implemented a custom SHAKE function
     public static Dictionary<string, string> availableActions = new Dictionary<string, string>
     {
         { "SHAKE", "<<shakeOverworld vCam_cutsceneCam 3 1>>" },
