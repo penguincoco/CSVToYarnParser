@@ -13,7 +13,7 @@ The project has an example case for the game "Starweave". This parser was develo
 
 3. Select the target output folder.
 
-4. Click Convert to Yarn! (the process is slow, give it up to two minutes), but once it’s completed, a properly formatted .yarn file will appear in the Output Folder!
+4. Click Convert to Yarn! It should only take a second or two, and once it’s completed, a properly formatted .yarn file will appear in the Output Folder!
 
 <img width="728" height="542" alt="image" src="https://github.com/user-attachments/assets/3ca50768-3f20-4a4c-84c1-769d9a25285f" />
 
