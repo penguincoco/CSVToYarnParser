@@ -3,6 +3,7 @@ This Parser is a tool for taking in a .csv and outputting a .yarn file (usable b
 The project has an example case for the game "Starweave". This parser was developed because every line of character needed a function call before it that would swap out which character portrait is shown based on the speaker and their emotion (plus other things, such as play audio, but that has been removed for simplicity's sake for this repo!). 
 
 # How to Use
+**Note: YarnSpinner is not in this Unity project, I was too lazy to figure out which version of YarnSpinner I need :D
 1. Open Tools > Parser (at the top bar). This will open the Parser. 
 <img width="1226" height="146" alt="image" src="https://github.com/user-attachments/assets/97b3d7b5-1a91-48cd-a2d1-0513ae11488a" />
 
