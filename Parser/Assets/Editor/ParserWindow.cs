@@ -9,7 +9,7 @@ public class ParserWindow : EditorWindow
     private string outputFolderPath = "";
     private string statusMessage = "";
 
-    //----- EDITOR RELATED -----//
+    //---------- EDITOR RELATED ----------//
     [MenuItem("Tools/Parser")]
     public static void ShowWindow()
     {
@@ -63,11 +63,11 @@ public class ParserWindow : EditorWindow
 
 
 
-    //----- PROCESS AND OUTPUT -----//
+    //----- PROCESS AND OUTPUT HIGH LEVEL FLOW -----//
     /*
         1. take in the csv, read it all
-        2. split it up by line
-        3. process each line
+        2. split it up by line break
+        3. process each line 
         4. return the line, add it to a List of all the lines
         5. output
    */
@@ -81,15 +81,17 @@ public class ParserWindow : EditorWindow
 
         string yarnString = "";                     //initialize the string that will ultimately be what we write to the .yarn file
 
+        //iterate through dialogue array, create a new DialogueObject for every element in the array
+        //each individual element will format and parse itself
         for (int i = 0; i < dialogue.Length; i++)
         {
             //TODO: for people using this tool, split the sheet as desired. In my use case (see Beacon1.csv), I had 3 columns. 
             string[] pieces = dialogue[i].Split(new[] { ',' }, 3);
 
-            // Handle blank line
+            // edge case -- length = 0  is a blank line
             if (pieces[0].Length == 0)
                 dialogueContainer[i] = new DialogueLine();
-            else
+            else    //Each line is its own Object -- DialogueLine
                 dialogueContainer[i] = new DialogueLine(pieces[0], pieces[1], pieces[2]);
 
             //only add the current string if there was anything in it. Don't add empty strings.
@@ -103,7 +105,7 @@ public class ParserWindow : EditorWindow
         OutputYarnFile(yarnString, outputPath, outputName);
     }
 
-
+    //takes in the csv and parses it out into a big string
     private string Parse(string csvFilePath)
     {
         if (File.Exists(csvFilePath))
@@ -135,7 +137,6 @@ public class ParserWindow : EditorWindow
 }
 
 
-
 public class DialogueLine
 {
     private string charName;
@@ -144,6 +145,7 @@ public class DialogueLine
 
     private string dialogueLine;
 
+    //constructor for lines with data
     public DialogueLine(string charName, string emotion, string charLine)
     {
         this.charName = charName;
@@ -179,9 +181,9 @@ public class DialogueLine
             {
                 //if we found a " in the string, then add it to the string
                 removedDelimiters += newCharLine[i];
-                if (newCharLine[i] == '"')
+                if (newCharLine[i] == '"')  //hard-coded for now to check for quotation marks inside of the line, will fix later
                 {
-                    //BUT then skip over the next character, because it's a guarantee duplicate 
+                    //BUT then skip over the next character, because it's a guarantee " 
                     i++;
                 }
             }
@@ -192,14 +194,23 @@ public class DialogueLine
         return newCharLine;
     }
 
-    //TODO: Implement Translate() based on whatever needs for your project
-    //in the case of my example (see Beacon1.csv for input, and Beacon1.yarn for output), we needed a unique function call before 
-    //every speaker's dialogue that would change the character portrait based off of the speaker, and their emotion 
+    /*
+    TODO: Implement Translate() based on whatever needs for your project.
+    tip: pass in the "cleanest" form of data possible. Meaning all extra characters from the .csv, formatting funkiness
+    as part of your spreadsheet implementation, etc. Try and have it be as clean data as possible. 
+    For example, if your original .csv, charLine was 
+    """sarah said ""hi"" to my mom"
+    try and clean it up before sending it to Translate(). Have it be 
+    sarah said "hi" to my mom  
+    in the case of my example (see Beacon1.csv for input, and Beacon1.yarn for output), we needed a unique function call before 
+    every speaker's dialogue that would change the character portrait based off of the speaker, and their emotion 
+    */
     private string Translate(string charName, string emotion, string charLine)
     {
         //---------- REPLACE BODY AND FUNCTION PARAMETERS AS NEEDED ----------//
         string dialogueLine = charLine;
 
+        //no character is speaking. It's a system action. 
         if (charName.Equals("SYSTEM"))
         {
             if (charLine.Contains("ENDNODE"))
@@ -227,28 +238,22 @@ public class DialogueLine
                 dialogueLine = systemValue;
             }
         }
+        //no character speaking, and not a system action. It's just a note in the script about the flow 
         else if (charName.Equals("NOTE"))
         {
-            // string value = charLine.Substring(0, charLine.Length - 1);
-            // ParserObject.systemActionsDict[value];
-            //dialogueLine = "";
             dialogueLine = "";
         }
         //Check for if the first char in the LINE is &, this means it's NARRATION
         else if (charLine.Substring(0, 1).Equals("&"))
         {
-            //string value = charLine.Replace("&", "[i]");
             string value = charLine.Substring(1);
             value = charName + ": <i><cspace=0.2em><size=22>" + value + "</i></cspace></size>";
 
             dialogueLine = value;
         }
+        //any other case--basically means it's a character speaking
         else
         {
-            //this is where we added that function call before every dialogue line. 
-            //see YarnCommands.cs to see syntax example, and read YarnSpinner docs for how to implement YarnCommands: https://docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals/commands 
-            // Below is the example output.
-            //<<initialize_line blackguard determined >>
             dialogueLine = "<<initialize_line " + charName.ToLower() + " " + emotion.ToLower() + " >>" + '\n'.ToString() + charName + ": " + charLine;
         }
 
@@ -263,6 +268,7 @@ public class DialogueLine
         return dialogueLine;
     }
 
+    //checks for delimiting characters, as defined in Utilities.delimiterCharacters
     private bool HasDelimiter(string charLine)
     {
         foreach (char c in Utilities.delimiterCharacters)
