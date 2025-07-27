@@ -101,6 +101,7 @@ public class ParserWindow : EditorWindow
             }
         }
 
+        //the output yarn file will have the same name as the .csv
         string outputName = Path.GetFileNameWithoutExtension(csvPath);
         OutputYarnFile(yarnString, outputPath, outputName);
     }
