@@ -12,7 +12,6 @@ The project has an example case for the game "Starweave". This parser was develo
    <img width="946" height="224" alt="image" src="https://github.com/user-attachments/assets/74655cca-d1b2-494a-a4b8-2c2db00e8f9e" />
 
 3. Select the target output folder.
-<img width="1560" height="382" alt="image" src="https://github.com/user-attachments/assets/354b3f87-9368-455a-8f71-5ef1a4a50415" />
 
 4. Click Convert to Yarn! (the process is slow, give it up to two minutes), but once it’s completed, a properly formatted .yarn file will appear in the Output Folder!
 
