@@ -33,10 +33,12 @@ If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-sc
 `Parser.cs` handles the parsing logic for the .csv. It reads in the .csv as a string, and splits it first by linebreaks. 
 Replace `TODO` in `ConvertToYarn()` with your own custom implmentation, depending on how your .csv is set up. 
 
-## DialogueLine.cs
-`DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
+## ParserUtilities
+'DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
 
 Replace the body of `Translate()` to implement your own custom .yarn output based on your project's needs. 
+
+`Utilities` is a class for adding YarnCommand functions. Replace/add your own custom Yarn Functions to `availableActions` dictionary to inject their calls into the .yarn file. 
 
 # YarnSpinner setup
 Create a YarnProject in the same folder that the Yarn files are outputting to. This will automatically add the .yarn file to the YarnProject you are using. 
