@@ -1,0 +1,19 @@
+SYSTEM,,[NODE: YvainesMonologue]
+Yvaine,Heartfelt,"""You know when I said I knew little about love?"""
+Yvaine,Heartfelt,"""That wasn’t true. I know a lot about love."""
+Yvaine,Heartfelt,"""I’ve seen it; I’ve seen centuries and centuries of it."""
+Yvaine,Heartfelt,"""It’s the only thing that made watching your world bearable."""
+Yvaine,Heartfelt,"""All the wars, pain, lies, and hate, made me want to turn away and never look down again."""
+Yvaine,Heartfelt,"""But to see the way that mankind loves! I mean you could search the furthest reaches of the universe and never find anything more beautiful."""
+Yvaine,Heartfelt,"""So, yes I know that love is unconditional, but I also know it can be unpredictable, unexpected, uncontrollable, unbearable, and strangely easy to mistake for loathing. """
+Yvaine,Heartfelt,"""And, well, what I’m trying to say, Tristan, is... I think I love you."""
+Yvaine,Heartfelt,"""My heart it feels like my chest can barely contain it, like it doesn’t belong to me anymore;"""
+Yvaine,Heartfelt,"""it belongs to you, and if you wanted it,"""
+Yvaine,Heartfelt,"""I’d wish for nothing in exchange: no gifts, no goods, no demonstrations of devotion, nothing, but knowing you love me, too."""
+Yvaine,Heartfelt,"""Just your heart in exchange for mine."""
+SYSTEM,,[ENDNODE: YvainesMonologue]
+,,
+SYSTEM,,[NODE: Mother]
+Tristan,Excitement,"""Victoria!"""
+Yvaine,Annoyance,"""I think I preferred Mother."""
+SYSTEM,,[ENDNODE: Mother]

@@ -29,5 +29,4 @@ public class YarnCommands : MonoBehaviour
     {
         speaker.sprite = speakerDictionary[name];
     }
-
 }
