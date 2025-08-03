@@ -9,6 +9,10 @@ public class ParserWindow : EditorWindow
     private string outputFolderPath = "";
     private string statusMessage = "";
 
+    [SerializeField]
+    private List<SystemAction> customActions = new List<SystemAction>();
+    private Vector2 actionScroll;
+
     //---------- EDITOR RELATED ----------//
     [MenuItem("Tools/Parser")]
     public static void ShowWindow()
@@ -59,6 +63,41 @@ public class ParserWindow : EditorWindow
 
         GUILayout.Space(10);
         GUILayout.Label($"Status: {statusMessage}");
+
+        //This is WIP. Functionality to add yarn commands via a editor window, not updating the Script in the Utilities class
+        /*
+        GUILayout.Space(10);
+        GUILayout.Label("Custom Yarn Actions", EditorStyles.boldLabel);
+
+        // Scroll view for long lists
+        actionScroll = EditorGUILayout.BeginScrollView(actionScroll, GUILayout.Height(150));
+
+        for (int i = 0; i < customActions.Count; i++)
+        {
+            EditorGUILayout.BeginHorizontal();
+
+            customActions[i].key = EditorGUILayout.TextField(customActions[i].key, GUILayout.Width(100));
+            customActions[i].yarnCommand = EditorGUILayout.TextField(customActions[i].yarnCommand);
+
+            if (GUILayout.Button("X", GUILayout.Width(20)))
+            {
+                customActions.RemoveAt(i);
+                break;
+            }
+
+            EditorGUILayout.EndHorizontal();
+        }
+
+        EditorGUILayout.EndScrollView();
+
+        // Add new action
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("+ Add Action"))
+        {
+            customActions.Add(new SystemAction { key = "", yarnCommand = "" });
+        }
+        GUILayout.EndHorizontal();
+        */
     }
 
 

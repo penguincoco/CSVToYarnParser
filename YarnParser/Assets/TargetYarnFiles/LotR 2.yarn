@@ -1,0 +1,14 @@
+title: TheRing
+---
+<<initialize_line frodo fear >>
+Frodo: I wish the Ring had never come to me. I wish none of this had happened.
+<<initialize_line gandalf earnest >>
+Gandalf: So do all who live to see such times, but that is not for them to decide. All we have to decide is what to do with the time that is given to us.
+<<initialize_line gandalf dark >>
+Gandalf: There are other forces at work in this world Frodo, besides the will of evil.
+<<initialize_line gandalf hope >>
+Gandalf: Bilbo was meant to find the Ring. In which case, you were also meant to have it.
+<<initialize_line gandalf hope >>
+Gandalf: And that is an encouraging thought.
+===
+

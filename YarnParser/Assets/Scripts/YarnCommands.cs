@@ -29,4 +29,10 @@ public class YarnCommands : MonoBehaviour
     {
         speaker.sprite = speakerDictionary[name];
     }
+
+    [YarnCommand("play_sound")]
+    public static void PlayNarrativeSound(string name)
+    {
+        Debug.Log("Playing " + name + " character sound");
+    }
 }
