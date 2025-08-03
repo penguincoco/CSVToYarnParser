@@ -35,7 +35,7 @@ Create a YarnProject in the same folder that the Yarn files are outputting to. T
 
 # Example Setup
 In the scene ParserDemo, there is a sample Project and .yarn file that was generated using the Parser Tool. 
-It uses the YarnParserDemo.csv to show the character name, character sprite and dialogue. The sprite is set via SetSpeakerInfo() in YarnCommands.cs
+It uses the YarnParserDemo.csv to show the character name, character sprite and dialogue. The sprite is set via SetSpeakerInfo() in `YarnCommands.cs`
 
 ``` C#
 [YarnCommand("initialize_line")]
