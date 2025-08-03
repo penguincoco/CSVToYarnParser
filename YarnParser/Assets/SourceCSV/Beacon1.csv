@@ -1,4 +1,4 @@
-SYSTEM,,[NODE: Beacon1.Quest1]
+SYSTEM,,[NODE: Beacon1Quest1]
 SYSTEM,,[PAUSE]
 BIRD,NEUTRAL,Here it is: the first of many! 
 DREAMER,SUSPICIOUS,So this is what we're looking for?
@@ -7,7 +7,7 @@ BLACKGUARD,DETERMINED,And just why should she do that?
 BIRD,NEUTRAL,"""I don't mean to be dramatic, but... well, failure to light the Beacons would cause the Lucid, and in turn your waking world, as we know it to unravel completely."""
 DREAMER,SUSPICIOUS,Seriously?!
 BIRD,NEUTRAL,I've said all I can on the matter and I can't force you to do anything. This choice is yours now.
-SYSTEM,,[ENDNODE: Beacon1.Quest1]
+SYSTEM,,[ENDNODE: Beacon1Quest1]
 SYSTEM,,[NODE: Beacon3Broken.Sequence3]
 SYSTEM,,[SHAKE]
 NARRATION,NEUTRAL,"""&The stone glows against my hand, as the ground begins to tremble."""
@@ -21,15 +21,15 @@ BIRD,NEUTRAL,"""And so the cycle continues! Thank you for your choice, Dreamer."
 NARRATION,NEUTRAL,"""&I smile and nod, but the word ""choice"" bounces around inside my head."""
 SYSTEM,,[ENDNODE]
 ,,
-SYSTEM,,[NODE: Beacon1Quest.Sequence7BLCK]
+SYSTEM,,[NODE: Beacon1QuestSequence7BLCK]
 BLACKGUARD,NEUTRAL,I'd have been more careful about touching that thing.... though I'm not sure you had many options back there.
 SYSTEM,,[ENDNODE]
 ,,
-SYSTEM,,[NODE: Beacon1Quest.Sequence7LGHT]
+SYSTEM,,[NODE: Beacon1QuestSequence7LGHT]
 LIGHTHOUSE,SUSPICIOUS,If it's already been done a thousand times before we even came here... I don't see why not?
 SYSTEM,,[ENDNODE]
 ,,
-SYSTEM,,[NODE: Beacon1Quest.Sequence7TRBR]
+SYSTEM,,[NODE: Beacon1QuestSequence7TRBR]
 TROUBADOUR,HAPPY,"""Man, I'd be lying if I said I wasn't just a little bit jealous of you. You're the freaking chosen one! The BEACON LIGHTER!"""
 TROUBADOUR,DETERMINED,It's gotta feel like a great honor...
 SYSTEM,,[ENDNODE]
