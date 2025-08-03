@@ -36,7 +36,7 @@ Replace `TODO` in `ConvertToYarn()` with your own custom implmentation, dependin
 ## DialogueLine.cs
 `DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
 
-Look for all `TODO` comments. This will let you know which parts of the script to add your custom parsing functionality to! 
+Replace the body of `Translate()` to implement your own custom .yarn output based on your project's needs. 
 
 # YarnSpinner setup
 Create a YarnProject in the same folder that the Yarn files are outputting to. This will automatically add the .yarn file to the YarnProject you are using. 
