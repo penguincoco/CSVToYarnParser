@@ -24,11 +24,19 @@ This Unity project has an example that is designed to parse a spreadsheet set up
 The columns are the speaker's name, their emotion, and their actual dialogue line. The parser's default behavior is to treat every individual row as a "data" packages (basically everything that will be needed to execute an individual line of dialogue that are shown via YarnSpinner (what changes upon clicking "continue"). 
 You can set up your own .csv however desired, but pay very close attention to syntax and setup. 
 Be mindful that a .csv will use COMMAS to separate the columns, so be careful using commas within cells. It could lead to unintended behavior if you ever try and use commas to split the file. 
+The .csv setup I used was all dialogue is wrapped in quotation marks. 
 
 If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals/commands )), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
 
 # Implementation 
-In `ParserWindow.cs`, look for all `TODO` comments. This will let you know which parts of the script to add your custom parsing functionality to! 
+## Parser.cs 
+`Parser.cs` handles the parsing logic for the .csv. It reads in the .csv as a string, and splits it first by linebreaks. 
+Replace `TODO` in `ConvertToYarn()` with your own custom implmentation, depending on how your .csv is set up. 
+
+## DialogueLine.cs
+`DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
+
+Look for all `TODO` comments. This will let you know which parts of the script to add your custom parsing functionality to! 
 
 # YarnSpinner setup
 Create a YarnProject in the same folder that the Yarn files are outputting to. This will automatically add the .yarn file to the YarnProject you are using. 
