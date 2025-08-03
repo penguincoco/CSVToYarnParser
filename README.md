@@ -29,3 +29,18 @@ If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-sc
 
 # Implementation 
 In `ParserWindow.cs`, look for all `TODO` comments. This will let you know which parts of the script to add your custom parsing functionality to! 
+
+# YarnSpinner setup
+Create a YarnProject in the same folder that the Yarn files are outputting to. This will automatically add the .yarn file to the YarnProject you are using. 
+
+# Example Setup
+In the scene ParserDemo, there is a sample Project and .yarn file that was generated using the Parser Tool. 
+It uses the YarnParserDemo.csv to show the character name, character sprite and dialogue. The sprite is set via SetSpeakerInfo() in YarnCommands.cs
+
+``` C#
+[YarnCommand("initialize_line")]
+public static void SetSpeakerInfo(string name, string expression)
+{
+   speaker.sprite = speakerDictionary[name];
+}
+```
