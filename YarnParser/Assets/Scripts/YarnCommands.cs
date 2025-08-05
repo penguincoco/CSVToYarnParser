@@ -8,6 +8,7 @@ public class YarnCommands : MonoBehaviour
 {
     [SerializeField] private static Image speaker;
     [SerializeField] private Image speakerImage;
+    [SerializeField] private static Animator frogAnimator;
 
     [SerializeField] private Sprite frodoSprite;
     [SerializeField] private Sprite gandalfSprite;
@@ -31,8 +32,14 @@ public class YarnCommands : MonoBehaviour
     }
 
     [YarnCommand("play_sound")]
-    public static void PlayNarrativeSound(string name)
+    public static void PlayNarrativeSound(string soundName)
     {
-        Debug.Log("Playing " + name + " character sound");
+        Debug.Log("Playing " + soundName + " sound");
+    }
+
+    [YarnCommand("play_animation")]
+    public static void PlayAnimation(string name)
+    {
+        frogAnimator.Play(name);
     }
 }

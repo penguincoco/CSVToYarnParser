@@ -9,9 +9,14 @@ public class ParserWindow : EditorWindow
     private string outputFolderPath = "";
     private string statusMessage = "";
 
+    //private Animation[] animations;
+    [SerializeField] private AnimationClip animationClip;
+
     [SerializeField]
     private List<SystemAction> customActions = new List<SystemAction>();
     private Vector2 actionScroll;
+
+    [SerializeField] private AvailableActionsData selectedActionsData;
 
     //---------- EDITOR RELATED ----------//
     [MenuItem("Tools/Parser")]
@@ -55,7 +60,7 @@ public class ParserWindow : EditorWindow
 
             EditorApplication.delayCall += () =>
             {
-                ConvertToYarn(csvFilePath, outputFolderPath);
+                ConvertToYarn(csvFilePath, outputFolderPath, selectedActionsData);
                 statusMessage = "Done!";
                 Repaint();
             };
@@ -63,6 +68,33 @@ public class ParserWindow : EditorWindow
 
         GUILayout.Space(10);
         GUILayout.Label($"Status: {statusMessage}");
+
+        // ---------- CUSTOM YARN FUNCTIONS ---------- //
+
+        GUILayout.Space(10);
+        GUILayout.Label("Action Dictionary", EditorStyles.boldLabel);
+
+        selectedActionsData = (AvailableActionsData)EditorGUILayout.ObjectField(
+            "Available Actions Data",
+            selectedActionsData,
+            typeof(AvailableActionsData),
+            false
+        );
+
+        /*
+        // ---------- ANIMATIONS ---------- //
+
+        GUILayout.Space(10);
+
+        GUILayout.Label("Animations", EditorStyles.boldLabel);
+
+        animationClip = (AnimationClip)EditorGUILayout.ObjectField(
+            "Animation Clip",
+            animationClip,
+            typeof(AnimationClip),
+            false
+        );
+        */
 
         //This is WIP. Functionality to add yarn commands via a editor window, not updating the Script in the Utilities class
         /*
@@ -111,10 +143,15 @@ public class ParserWindow : EditorWindow
         5. output
    */
 
-    void ConvertToYarn(string csvPath, string outputPath)
+    void ConvertToYarn(string csvPath, string outputPath, AvailableActionsData actionsData)
     {
-        string yarnString = Parser.ConvertToYarn(csvPath); 
+        if (selectedActionsData == null)
+        {
+            Debug.LogError("No AvailableActionsData selected!");
+            return;
+        }
 
+        string yarnString = Parser.ConvertToYarn(csvPath, selectedActionsData);
         //the output yarn file will have the same name as the .csv
         string outputName = Path.GetFileNameWithoutExtension(csvPath);
         OutputYarnFile(yarnString, outputPath, outputName);

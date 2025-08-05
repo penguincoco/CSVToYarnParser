@@ -4,4 +4,6 @@ Gandalf,Earnest,"""So do all who live to see such times, but that is not for the
 Gandalf,Dark,"""There are other forces at work in this world Frodo, besides the will of evil."""
 Gandalf,Hope,"""Bilbo was meant to find the Ring. In which case, you were also meant to have it."""
 Gandalf,Hope,And that is an encouraging thought.
+SYSTEM,,[PLAYSOUND]
+SYSTEM,,[BEACONLIGHT]
 SYSTEM,,[ENDNODE: TheRing]

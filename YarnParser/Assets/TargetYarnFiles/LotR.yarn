@@ -10,5 +10,7 @@ Gandalf: There are other forces at work in this world Frodo, besides the will of
 Gandalf: Bilbo was meant to find the Ring. In which case, you were also meant to have it.
 <<initialize_line gandalf hope >>
 Gandalf: And that is an encouraging thought.
+<< play_sound happy >>
+
 ===
 
