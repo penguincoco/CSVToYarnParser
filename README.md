@@ -16,10 +16,10 @@ There are a few steps that need to be taken before actually using the parser. Pl
 
 3. Select the target output folder.
 
-4. Set a `AvailableActions` in "Available Actions Data"--this field is necessary for the parser to read custom synax used in your spreadsheet to replace it with `YarnCommand` calls. See [Creating and Populating `AvailableActions`] for how to set up your syntax and `YarnCommand` calls.
+4. Set a `AvailableActions` in "Available Actions Data"--this field is necessary for the parser to read custom synax used in your spreadsheet to replace it with `YarnCommand` calls. See [Creating and Populating `AvailableActions`](#Creating-and-Populating-`AvailableActions`) for how to set up your syntax and `YarnCommand` calls.
 **Note: it will default to `Default_AvailableActions` if there is no "Available Actions Data" set. 
 
-5. Click Convert to Yarn! It should only take a second or two, and once it’s completed, a properly formatted .yarn file will appear in the Output Folder! The console will also print the file output path. 
+7. Click Convert to Yarn! It should only take a second or two, and once it’s completed, a properly formatted .yarn file will appear in the Output Folder! The console will also print the file output path. 
 
 <img width="728" height="542" alt="image" src="https://github.com/user-attachments/assets/3ca50768-3f20-4a4c-84c1-769d9a25285f" />
 
@@ -36,7 +36,8 @@ If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-sc
 
 # Creating and Populating `AvailableActions`
 ![Actions Dictionary](image.png)
-If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals/commands )), make sure you use a special, consistent syntax for calling them. The `Action Editor` allows you to add the syntax on your spreadsheet and associated `YarnCommand` as Key-Value pairs (KVP) and store them to a ScriptableObject. You can also have multiple Dictionaries. This allows you to parse different sheets  and read from different dictionaries if desired! 
+
+If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions)), make sure you use a special, consistent syntax for calling them. The `Action Editor` allows you to add the syntax on your spreadsheet and associated `YarnCommand` as Key-Value pairs (KVP) and store them to a ScriptableObject. You can also have multiple Dictionaries. This allows you to parse different sheets  and read from different dictionaries if desired! 
 
 Right click: Create > Utilities > Available Actions Database. This will create a `AvailableActionsData` base that must be saved to the `Resources` folder. If it is not, when parsing a `.csv` an error will be thrown.
 
