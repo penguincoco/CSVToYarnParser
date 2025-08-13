@@ -5,7 +5,7 @@ The project has an example case for the game "Starweave". This parser was develo
 
 # How to Use
 ## Setup
-There are a few steps that need to be taken before actually using the parser. Please see [.csv setup] and [Creating and Populating `AvailableActions`] before following the steps below.
+There are a few steps that need to be taken before actually using the parser. Please see [.csv setup](#.csv-Setup) and [Creating and Populating `AvailableActions`](#Creating-and-Populating-`AvailableActions`) before following the steps below.
 
 1. Open Tools > Parser (at the top bar). This will open the Parser. 
 <img width="1226" height="146" alt="image" src="https://github.com/user-attachments/assets/97b3d7b5-1a91-48cd-a2d1-0513ae11488a" />
@@ -32,7 +32,7 @@ You can set up your own .csv however desired, but pay very close attention to sy
 Be mindful that a .csv will use COMMAS to separate the columns, so be careful using commas within cells. It could lead to unintended behavior if you ever try and use commas to split the file. 
 The .csv setup I used was all dialogue is wrapped in quotation marks. 
 
-If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/write-yarn-scripts/scripting-fundamentals/commands )), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
+If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions)), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
 
 # Creating and Populating `AvailableActions`
 ![Actions Dictionary](image.png)
