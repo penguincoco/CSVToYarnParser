@@ -8,6 +8,7 @@ public static class Parser
     public static string ConvertToYarn(string csvPath, AvailableActionsData actionsData)
     {
         //read from availableActions
+        if (actionsData == null)
         Utilities.LoadAvailableActions(actionsData);
 
         string rawText = Parse(csvPath); // Read CSV as string

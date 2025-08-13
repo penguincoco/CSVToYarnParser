@@ -23,7 +23,7 @@ public class YarnCommands : MonoBehaviour
 
     private void Awake()
     {
-        PopulateSpeakerDictionary();
+        speakerDictionary = SpeakerDatabase.PopulateDictionary();
         speaker = speakerImage;
 
         // Set up audio source if not assigned

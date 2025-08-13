@@ -26,8 +26,8 @@ public class ActionEditorWindow : EditorWindow
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Add New Action", EditorStyles.boldLabel);
-        newKey = EditorGUILayout.TextField("Key", newKey);
-        newValue = EditorGUILayout.TextField("Value", newValue);
+        newKey = EditorGUILayout.TextField("csv Syntax", newKey);
+        newValue = EditorGUILayout.TextField("YarnCommand Call", newValue);
 
         if (GUILayout.Button("Add Action"))
         {

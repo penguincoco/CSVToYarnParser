@@ -47,6 +47,20 @@ public class ParserWindow : EditorWindow
 
         EditorGUILayout.TextField("Output Folder", outputFolderPath);
 
+        // ---------- CUSTOM YARN FUNCTIONS ---------- //
+
+        GUILayout.Space(10);
+        GUILayout.Label("Action Dictionary", EditorStyles.boldLabel);
+
+        selectedActionsData = (AvailableActionsData)EditorGUILayout.ObjectField(
+            "Available Actions Data",
+            selectedActionsData,
+            typeof(AvailableActionsData),
+            false
+        );
+
+        GUILayout.Space(10);
+        GUILayout.Label($"Status: {statusMessage}");
         if (GUILayout.Button("Convert to Yarn"))
         {
             if (string.IsNullOrEmpty(csvFilePath))
@@ -60,26 +74,18 @@ public class ParserWindow : EditorWindow
 
             EditorApplication.delayCall += () =>
             {
-                ConvertToYarn(csvFilePath, outputFolderPath, selectedActionsData);
-                statusMessage = "Done!";
+                if (selectedActionsData != null)
+                {
+                    ConvertToYarn(csvFilePath, outputFolderPath, selectedActionsData);
+                    statusMessage = "Done!";
+                }
+                else
+                    statusMessage = "Please input an AvailableActionsData object before converting.";
+
                 Repaint();
             };
         }
 
-        GUILayout.Space(10);
-        GUILayout.Label($"Status: {statusMessage}");
-
-        // ---------- CUSTOM YARN FUNCTIONS ---------- //
-
-        GUILayout.Space(10);
-        GUILayout.Label("Action Dictionary", EditorStyles.boldLabel);
-
-        selectedActionsData = (AvailableActionsData)EditorGUILayout.ObjectField(
-            "Available Actions Data",
-            selectedActionsData,
-            typeof(AvailableActionsData),
-            false
-        );
 
         /*
         // ---------- [WIP] ANIMATIONS ---------- //

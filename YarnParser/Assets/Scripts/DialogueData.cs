@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "DialogueData", menuName = "Yarn Data/Dialogue Data")]
+//[CreateAssetMenu(fileName = "DialogueData", menuName = "Yarn Data/Dialogue Data")]
 public class DialogueData : ScriptableObject
 {
     [System.Serializable]

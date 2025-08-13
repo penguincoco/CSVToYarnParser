@@ -180,7 +180,7 @@ public static class Utilities
         if (data == null)
         {
             Debug.LogWarning("AvailableActionsData is null!");
-            //TODO: default it to Default_AvailableAction
+            //TODO: print to the GUI that it's null
             return;
         }
 
