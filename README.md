@@ -32,7 +32,7 @@ You can set up your own .csv however desired, but pay very close attention to sy
 Be mindful that a .csv will use COMMAS to separate the columns, so be careful using commas within cells. It could lead to unintended behavior if you ever try and use commas to split the file. 
 The .csv setup I used was all dialogue is wrapped in quotation marks. 
 
-If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions)), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
+If you are using [YarnCommands](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
 
 # Creating and Populating `AvailableActions`
 ![Actions Dictionary](image.png)
