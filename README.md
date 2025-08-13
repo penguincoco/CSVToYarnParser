@@ -123,7 +123,7 @@ public static void SetSpeakerInfo(string name, string expression)
 
  7. Click "Convert to Yarn". This will produce `LotR.yarn` to the same folder as the YarnProject. Because they are in the same folder, the YarnProject will automatically add it to the list of Yarn Scripts.
 
-<img width="790" height="215" alt="image" src="https://github.com/user-attachments/assets/b6ebaafb-b872-4e05-8b2b-01c95d4d656f" />
+<!-- <img width="790" height="215" alt="image" src="https://github.com/user-attachments/assets/b6ebaafb-b872-4e05-8b2b-01c95d4d656f" /> -->
 
 ### Scene Setup 
 8. Drag and drop a `ParserDialogueSystem` prefab into the scene.
