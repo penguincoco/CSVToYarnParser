@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dee7bd7a209d434dba08d50f94dfa36, type: 3}
-  m_Name: LotR_AvailableActions
+  m_Script: {fileID: 11500000, guid: e1aa585ccc4ff457cb4f160a7d4870b9, type: 3}
+  m_Name: frodo
   m_EditorClassIdentifier: 
-  actions:
-  - key: WAIT
-    value: <<customWait 2>>
+  name: frodo
+  sprite: {fileID: 21300000, guid: a0ce72281935145088a1731a0dc52c71, type: 3}
+  sfx: {fileID: 0}

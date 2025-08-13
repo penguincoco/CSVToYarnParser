@@ -82,7 +82,7 @@ public class ParserWindow : EditorWindow
         );
 
         /*
-        // ---------- ANIMATIONS ---------- //
+        // ---------- [WIP] ANIMATIONS ---------- //
 
         GUILayout.Space(10);
 

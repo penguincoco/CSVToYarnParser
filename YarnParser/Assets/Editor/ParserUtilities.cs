@@ -168,9 +168,6 @@ public class Utilities
 public static class Utilities
 {
     public static Dictionary<string, string> availableActions = new Dictionary<string, string>();
-
-    public static AvailableActionsDatabase database;
-
     public static List<char> delimiterCharacters = new()
     {
         { '"' },
@@ -183,21 +180,16 @@ public static class Utilities
         if (data == null)
         {
             Debug.LogWarning("AvailableActionsData is null!");
+            //TODO: default it to Default_AvailableAction
             return;
         }
 
         foreach (var entry in data.actions)
         {
             if (!availableActions.ContainsKey(entry.key))
-            {
                 availableActions.Add(entry.key, entry.value);
-            }
             else
-            {
                 Debug.LogWarning($"Duplicate key: {entry.key}");
-            }
         }
-
-        Debug.Log($"Loaded {availableActions.Count} actions from {data.name}");
     }
 }

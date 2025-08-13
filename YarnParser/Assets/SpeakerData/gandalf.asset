@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dee7bd7a209d434dba08d50f94dfa36, type: 3}
-  m_Name: LotR_AvailableActions
+  m_Script: {fileID: 11500000, guid: e1aa585ccc4ff457cb4f160a7d4870b9, type: 3}
+  m_Name: gandalf
   m_EditorClassIdentifier: 
-  actions:
-  - key: WAIT
-    value: <<customWait 2>>
+  name: gandalf
+  sprite: {fileID: 21300000, guid: e724c670000af48c3b43a8722b03f516, type: 3}
+  sfx: {fileID: 0}

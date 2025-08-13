@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// WIP
+/// </summary>
+
 public class AnimationDataCreatorWindow : EditorWindow
 {
+    /*
     private string speakerName = "";
     private AnimationClip animationClip;
 
-    [MenuItem("Tools/Create Animation Data")]
+    //[MenuItem("Tools/Create Animation Data")]
     public static void ShowWindow()
     {
         GetWindow<AnimationDataCreatorWindow>("Animation Data Creator");
@@ -48,4 +53,5 @@ public class AnimationDataCreatorWindow : EditorWindow
 
         Debug.Log($"DialogueData asset created at {path}");
     }
+    */
 }

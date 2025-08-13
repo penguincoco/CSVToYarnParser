@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "Dialogue Data", menuName = "Yarn Data/Dialogue Data")]
+[CreateAssetMenu(fileName = "DialogueData", menuName = "Yarn Data/Dialogue Data")]
 public class DialogueData : ScriptableObject
 {
-    [SerializeField] public string name;
-    [SerializeField] public Sprite portrait;
-    [SerializeField] public AnimationClip animationClip; 
+    [System.Serializable]
+    public class SpeakerData
+    {
+        public string name;
+        [TextArea]
+        public Sprite sprite;
+        public AnimationClip animationClip;
+    }
+
+    public List<SpeakerData> speakers = new List<SpeakerData>();
 }

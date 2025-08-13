@@ -10,8 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dee7bd7a209d434dba08d50f94dfa36, type: 3}
-  m_Name: LotR_AvailableActions
+  m_Name: Default_AvailableActions
   m_EditorClassIdentifier: 
-  actions:
-  - key: WAIT
-    value: <<customWait 2>>
+  actions: []
