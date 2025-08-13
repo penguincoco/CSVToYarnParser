@@ -37,7 +37,8 @@ If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/yarn-spinner-
 # Creating and Populating `AvailableActions`
 ![Actions Dictionary](image.png)
 
-If you are using [YarnCommands]([url](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions)), make sure you use a special, consistent syntax for calling them. The `Action Editor` allows you to add the syntax on your spreadsheet and associated `YarnCommand` as Key-Value pairs (KVP) and store them to a ScriptableObject. You can also have multiple Dictionaries. This allows you to parse different sheets  and read from different dictionaries if desired! 
+If you are using [YarnCommands](https://docs.yarnspinner.dev/yarn-spinner-for-unity/creating-commands-functions), make sure you use a special, consistent syntax for calling them. In my example, we used `SYSTEM` in column A, and used square brackets ([ ]) on both sides of the `YarnCommand`'s name to let the parser know to search for a `YarnCommand`.
+, make sure you use a special, consistent syntax for calling them. The `Action Editor` allows you to add the syntax on your spreadsheet and associated `YarnCommand` as Key-Value pairs (KVP) and store them to a ScriptableObject. You can also have multiple Dictionaries. This allows you to parse different sheets  and read from different dictionaries if desired! 
 
 Right click: Create > Utilities > Available Actions Database. This will create a `AvailableActionsData` base that must be saved to the `Resources` folder. If it is not, when parsing a `.csv` an error will be thrown.
 
@@ -50,12 +51,12 @@ Value: the correctly formatted `YarnCommand` call to insert in the `.yarn` file.
 
 
 # Implementation 
-## Parser.cs 
+## Parser.cs f
 `Parser.cs` handles the parsing logic for the .csv. It reads in the .csv as a string, and splits it first by linebreaks. 
 Replace `TODO` in `ConvertToYarn()` with your own custom implmentation, depending on how your .csv is set up. 
 
 ## ParserUtilities
-'DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
+`DialogueLine` is a class for each row of dialogue in the original .csv/spreadsheet. `Translate()` handles taking in the input and formatting it as desired for the output .yarn file. In my case, I needed a function call before every line of character dialogue, so the function injects a `<< initialize_line >>` before every spoken dialogue line. 
 
 Replace the body of `Translate()` to implement your own custom .yarn output based on your project's needs. 
 
